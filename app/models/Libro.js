@@ -2,8 +2,8 @@ module.exports = (sequelize, Sequelize) => {
     return sequelize.define('libro', {
         id_libro: {
             type: Sequelize.INTEGER,
-            autoIncrement: true,    // This should be the only autoIncrement field
-            primaryKey: true        // Make sure it's the primary key
+            autoIncrement: true,    
+            primaryKey: true        
         },
         titulo: {
             type: Sequelize.STRING(255),
