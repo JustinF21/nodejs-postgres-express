@@ -2,7 +2,8 @@ module.exports = (sequelize, Sequelize) => {
 	const Autor = sequelize.define('autor', {
 		id_autor: {
 			type: Sequelize.INTEGER,
-			autoIncrement: true
+			autoIncrement: true,
+			primaryKey: true // Esto asegura que es la clave primaria y auto-incremental
 		},
 		nombre: {                                                                 
 			type: Sequelize.STRING(100),
