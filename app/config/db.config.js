@@ -27,7 +27,7 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
  //para mandar al servidor 
-db.Departamento = require('../models/Departamento.js')(sequelize, Sequelize);
+
 db.Usuario = require('../models/Usuario.js')(sequelize, Sequelize);
 
 module.exports = db;
