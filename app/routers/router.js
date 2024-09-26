@@ -5,14 +5,11 @@
  // Importar el controlador
  const usuarioController = require('../controllers/UsuarioController'); // Verifica que la ruta sea correcta
  
- // Definir las rutas
- router.post('/usuarios', usuarioController.create);
- router.get('/usuarios', usuarioController.getAll);
- router.get('/usuarios/:id_usuario', usuarioController.getById);
- router.put('/usuarios/:id_usuario', usuarioController.updateById);
- router.delete('/usuarios/:id_usuario', usuarioController.deleteById);
- 
- module.exports = router;
- 
-module.exports = router;
 
+router.post('/api/usuarios/create', usuarioController.create);
+router.get('/api/usuarios/all', usuarioController.getAll);  // Cambié retrieveAllUsuarios a getAll
+router.get('/api/usuarios/onebyid/:id_usuario', usuarioController.getById);// Cambié getUsuarioById a getById
+router.put('/api/usuarios/update/:id_usuario', usuarioController.updateById); // Asegúrate de usar id_usuario, no solo id
+router.delete('/api/usuarios/delete/:id_usuario', usuarioController.deleteById);// También aquí id_usuario
+
+module.exports = router;
