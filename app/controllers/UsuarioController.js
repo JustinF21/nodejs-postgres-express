@@ -7,14 +7,10 @@ exports.create = (req, res) => {
 
     try {
         // Building Usuario object from request's body
-        usuario.id_usuario = req.body.id_usuario;
         usuario.nombre = req.body.nombre;
-        usuario.apellido = req.body.apellido;
-        usuario.email = req.body.email;
-        usuario.telefono = req.body.telefono;
-        usuario.direccion = req.body.direccion;
-        usuario.fecha_registro = req.body.fecha_registro || new Date();
-        usuario.estado = req.body.estado || 'activo';
+        usuario.correo = req.body.correo;
+        usuario.contraseña = req.body.contraseña; // Assuming it's already hashed before being sent
+        usuario.fecha_creacion = req.body.fecha_creacion || new Date();
 
         // Save to MySQL database
         Usuario.create(usuario).then(result => {
@@ -89,11 +85,8 @@ exports.updateById = async (req, res) => {
         } else {
             let updatedObject = {
                 nombre: req.body.nombre,
-                apellido: req.body.apellido,
-                email: req.body.email,
-                telefono: req.body.telefono,
-                direccion: req.body.direccion,
-                estado: req.body.estado
+                correo: req.body.correo,
+                contraseña: req.body.contraseña // Assuming it's already hashed
             };
             let result = await Usuario.update(updatedObject, { returning: true, where: { id_usuario: usuarioId } });
 

@@ -1,44 +1,28 @@
 module.exports = (sequelize, Sequelize) => {
 	const Usuario = sequelize.define('usuario', {
 		id_usuario: {
-			type: Sequelize.INTEGER
+			type: Sequelize.INTEGER,
+			autoIncrement: true // Manteniendo auto-incremento, pero sin clave primaria
 		},
 		nombre: {
-			type: Sequelize.STRING(100)
-		},
-		apellido: {
-			type: Sequelize.STRING(100)
-		},
-		email: {
 			type: Sequelize.STRING(100),
-			allowNull: false,
-			unique: true
-		},
-		telefono: {
-			type: Sequelize.STRING(15)
-		},
-		direccion: {
-			type: Sequelize.STRING(255)
-		},
-		fecha_registro: {
-			type: Sequelize.DATE,
-			defaultValue: Sequelize.NOW,
 			allowNull: false
 		},
-		estado: {
-			type: Sequelize.ENUM('activo', 'inactivo', 'suspendido'),
-			defaultValue: 'activo'
-		},
-		createdAt: {
-			type: Sequelize.DATE,
-			defaultValue: Sequelize.NOW,
+		correo: {
+			type: Sequelize.STRING(100),
 			allowNull: false
 		},
-		updatedAt: {
+		contraseña: {
+			type: Sequelize.STRING(255),
+			allowNull: false // Contraseña encriptada
+		},
+		fecha_creacion: {
 			type: Sequelize.DATE,
 			defaultValue: Sequelize.NOW,
 			allowNull: false
 		}
+	}, {
+		timestamps: false // Opción para eliminar el manejo automático de timestamps
 	});
 
 	return Usuario;
