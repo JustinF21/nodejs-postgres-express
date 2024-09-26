@@ -2,7 +2,8 @@ module.exports = (sequelize, Sequelize) => {
 	const Usuario = sequelize.define('usuario', {
 		id_usuario: {
 			type: Sequelize.INTEGER,
-			autoIncrement: true // Manteniendo auto-incremento, pero sin clave primaria
+			autoIncrement: true,
+			primaryKey: true // Set as the primary key
 		},
 		nombre: {
 			type: Sequelize.STRING(100),
@@ -26,4 +27,4 @@ module.exports = (sequelize, Sequelize) => {
 	});
 
 	return Usuario;
-}
+};
