@@ -2,12 +2,12 @@ module.exports = (sequelize, Sequelize) => {
 	const Proyecto = sequelize.define('proyecto', {
 		id_proyecto: {
 			type: Sequelize.INTEGER,
-			autoIncrement: true,
-			// No se especifica primaryKey
+			autoIncrement: true, // Solo este campo debería ser autoincremental
+			primaryKey: true // Especifica que es la clave primaria
 		},
 		id_usuario: {
 			type: Sequelize.INTEGER,
-			// Eliminado references
+			// No es autoincremental
 		},
 		nombre: {
 			type: Sequelize.STRING(100),
@@ -28,3 +28,4 @@ module.exports = (sequelize, Sequelize) => {
 
 	return Proyecto;
 };
+
