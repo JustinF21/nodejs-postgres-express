@@ -7,9 +7,9 @@
  
 
 router.post('/api/usuarios/create', usuarioController.create);
-router.get('/api/usuarios/all', usuarioController.getAll);  // Cambié retrieveAllUsuarios a getAll
-router.get('/api/usuarios/onebyid/:id_usuario', usuarioController.getById);// Cambié getUsuarioById a getById
-router.put('/api/usuarios/update/:id_usuario', usuarioController.updateById); // Asegúrate de usar id_usuario, no solo id
-router.delete('/api/usuarios/delete/:id_usuario', usuarioController.deleteById);// También aquí id_usuario
+router.get('/api/usuarios/all', usuarioController.getAll);  
+router.get('/api/usuarios/onebyid/:id_usuario', usuarioController.getById);
+router.put('/api/usuarios/update/:id_usuario', usuarioController.updateById); 
+router.delete('/api/usuarios/delete/:id_usuario', usuarioController.deleteById);
 
 module.exports = router;
