@@ -5,8 +5,7 @@ let router = express.Router();
  //constasntes de rutas 
 
  const usuarios= require('../controllers/UsuarioController.js');
- const libros= require('../controllers/LibroController.js');
- const autores= require('../controllers/AutorController.js');
+
  
  
 router.post('/api/usuarios/create', usuarios.create);
